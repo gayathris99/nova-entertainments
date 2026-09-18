@@ -2192,6 +2192,11 @@ img {
 }
 
 @media (max-width: 700px) {
+  .hero-bottom {
+    top: 24%;
+    transform: none;
+  }
+
   .nav {
     height: 68px;
     padding: 0 16px;
@@ -2851,4 +2856,55 @@ img {
 .events-list-section .event-card-image img {
   object-fit: contain !important;
   background: var(--paper);
+}
+
+@media (max-width: 700px) {
+  .nav {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero-content,
+  .home-events,
+  .events-page,
+  .back,
+  .detail-hero,
+  .details,
+  .video,
+  .contact-section,
+  .footer {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .navlinks {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero-bottom {
+    top: 5%;
+    transform: none;
+  }
+
+  .hero-categories {
+    margin-top: 10px;
+  }
+
+  .nav.menu-open {
+    z-index: 50;
+  }
+
+  .nav.menu-open .navlinks {
+    z-index: 50;
+    height: auto !important;
+    overflow: visible;
+    background: var(--cream);
+  }
+
+  .nav.menu-open .navlinks a {
+    height: 48px !important;
+    min-height: 48px;
+    flex: 0 0 48px;
+  }
 }
