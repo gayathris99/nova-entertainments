@@ -1,0 +1,2854 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+  --cream: #f4f1e8;
+  --paper: #faf8f1;
+  --ink: #111;
+  --muted: #706d65;
+  --line: #d4d0c5;
+  --yellow: #d9b54d;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav {
+  height: 58.8px;
+  padding: 0 3.15vw;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  background: var(--cream);
+
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+
+/* Logo */
+
+.logo {
+  flex-shrink: 0;
+
+  font-size: 17.5px;
+  font-weight: 700;
+
+  letter-spacing: -1.12px;
+  line-height: 0.8;
+}
+
+.logo small {
+  display: block;
+
+  margin-top: 5.6px;
+
+  font-size: 8px;
+  letter-spacing: 1.89px;
+}
+
+
+/* Navigation */
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 25.2px;
+
+  margin: auto;
+
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.navlinks a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  line-height: 1;
+}
+
+.navlinks a.active {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+/* Hide old Plan An Event button */
+
+.plan {
+  display: none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  background: #dedbd1;
+  color: #4f4d47;
+
+  padding: 16.8px 3.15vw;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 8px;
+  letter-spacing: 2.1px;
+}
+
+.footer-logo {
+  width: 150px;
+  height: 42px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* =========================================================
+   HOME — CINEMATIC HERO
+========================================================= */
+
+.cinematic-hero {
+  min-height: clamp(640px, 86vh, 900px);
+
+  position: relative;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=2200&q=90");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(244, 241, 232, 0.98) 0%,
+      rgba(244, 241, 232, 0.92) 32%,
+      rgba(17, 17, 17, 0.18) 68%,
+      rgba(17, 17, 17, 0.38) 100%
+    );
+}
+
+.hero-content {
+  position: relative;
+
+  min-height: clamp(640px, 86vh, 900px);
+
+  padding: 21px 3.15vw 33.6px;
+
+  display: block;
+}
+
+.hero-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  font-weight: 600;
+}
+
+.hero-bottom {
+  display: grid;
+
+  grid-template-columns: 1fr 182px;
+
+  gap: 3.5vw;
+
+  align-items: end;
+
+  position: absolute;
+  top: 42%;
+  left: 3.15vw;
+  right: 3.15vw;
+  transform: translateY(-8%);
+}
+
+.handwritten {
+  font-family: "Caveat", cursive;
+
+  font-size: 18.9px;
+
+  margin: 0 0 9.8px;
+}
+
+.hero-content h1 {
+  max-width: 630px;
+
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-weight: 400;
+
+  font-size: clamp(45.5px, 5.81vw, 88.2px);
+
+  line-height: 0.96;
+
+  letter-spacing: -3.5px;
+}
+
+.hero-intro {
+  max-width: 520px;
+
+  margin: 19.6px 0 0;
+
+  font-size: clamp(13px, 0.95vw, 16px);
+
+  line-height: 1.55;
+
+  color: #4f4d47;
+}
+
+.hero-categories {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9.8px;
+
+  padding-left: 16.8px;
+
+  border-left: 1px solid rgba(17, 17, 17, 0.35);
+
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .hero-bottom {
+    top: 38%;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(48px, 14vw, 76px);
+    letter-spacing: -2px;
+    line-height: 0.98;
+  }
+
+  .hero-intro {
+    max-width: 90%;
+    font-size: 13px;
+  }
+
+  .hero-categories {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   HOME — UPCOMING EVENTS
+========================================================= */
+
+.home-events {
+  padding: 77px 3.15vw;
+}
+
+.section-head {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: end;
+
+  margin-bottom: 38.5px;
+}
+
+.section-kicker {
+  display: block;
+
+  margin-bottom: 11.2px;
+
+  font-size: 8px;
+
+  letter-spacing: 2.1px;
+
+  color: #77746d;
+
+  font-weight: 700;
+}
+
+.section-head h2,
+.events-intro h1 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-weight: 400;
+
+  font-size: clamp(38.5px, 4.9vw, 73.5px);
+
+  line-height: 0.86;
+
+  letter-spacing: -2.1px;
+}
+
+.section-head h2 em,
+.events-intro h1 em {
+  font-style: italic;
+}
+
+.text-link {
+  padding-bottom: 4.9px;
+
+  border-bottom: 1px solid #111;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.05px;
+}
+
+.home-event-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 19.6px 16.8px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   EVENT CARD — GENERAL
+========================================================= */
+
+.event-card {
+  display: block;
+
+  min-width: 0;
+
+  position: relative;
+
+  color: var(--ink);
+}
+
+.event-card-image {
+  position: relative;
+
+  width: 100%;
+
+  /*
+    Shorter image.
+  */
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+.event-card-image img {
+  transition: transform 0.6s ease;
+}
+
+.event-card:hover .event-card-image img {
+  transform: scale(1.035);
+}
+
+
+/*
+   No category labels on event images.
+*/
+
+.event-card-tag {
+  display: none;
+}
+
+
+/* Date on image */
+
+.event-card-image-date {
+  position: absolute;
+
+  top: 12.6px;
+  right: 12.6px;
+
+  z-index: 5;
+
+  padding: 9.1px 11.9px;
+
+  background: var(--paper);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.025em;
+
+  white-space: nowrap;
+}
+
+
+/* Remove old index number */
+
+.event-card-index {
+  display: none;
+}
+
+
+/* =========================================================
+   EVENT CARD — CONTENT
+========================================================= */
+
+.event-card-content {
+  padding: 11.9px 0 19.6px;
+
+  position: relative;
+}
+
+.event-card-date {
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+
+  color: #77746d;
+
+  margin-bottom: 7px;
+}
+
+
+/*
+   Venue (shown above the title — the key at-a-glance info)
+*/
+
+.event-card p,
+.event-card-location {
+  margin: 0 0 7px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  color: #4f4d47;
+}
+
+
+/*
+   Title row (title + arrow)
+*/
+
+.event-card-title-row {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 7px;
+
+  margin-bottom: 7px;
+}
+
+.event-card h3,
+.event-card-title-row h3 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(18.9px, 1.65vw, 26.6px);
+
+  font-weight: 600;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.035em;
+}
+
+
+/*
+   Arrow
+*/
+
+.event-arrow,
+.event-card-arrow {
+  flex-shrink: 0;
+
+  margin-top: 5.6px;
+
+  font-size: 10.5px;
+
+  line-height: 1;
+
+  color: #918d84;
+
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.event-card:hover .event-arrow,
+.event-card:hover .event-card-arrow {
+  transform: translate(3px, -3px);
+
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   HOMEPAGE FEATURED CARD
+========================================================= */
+
+.event-card.featured .event-card-image {
+  aspect-ratio: 4 / 3;
+}
+
+
+/* =========================================================
+   YELLOW CTA
+========================================================= */
+
+.yellow-cta {
+  padding: 66.5px 3.15vw;
+
+  background: var(--yellow);
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: end;
+
+  gap: 28px;
+}
+
+.yellow-cta h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(36.4px, 4.2vw, 59.5px);
+
+  line-height: 0.9;
+
+  font-weight: 400;
+}
+
+.yellow-cta > a {
+  padding: 12.6px 16.8px;
+
+  background: #111;
+
+  color: #fff;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   EVENTS PAGE
+========================================================= */
+
+.events-page {
+  padding: 0 3.15vw 77px;
+}
+
+
+/* ---------------------------------------------------------
+   Events masthead
+--------------------------------------------------------- */
+
+.events-masthead {
+  position: relative;
+
+  min-height: 413px;
+
+  padding: 43.4px 0 50.4px;
+
+  display: grid;
+
+  grid-template-columns: 0.72fr 1.65fr 0.63fr;
+
+  gap: 2.8vw;
+
+  align-items: end;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.events-masthead::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 0.7px;
+
+  background: var(--line);
+}
+
+.events-masthead-label {
+  align-self: start;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5.6px;
+
+  padding-top: 2.8px;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+
+  letter-spacing: 1.68px;
+
+  font-weight: 700;
+
+  color: #77746d;
+}
+
+.events-masthead-main {
+  padding-bottom: 5.6px;
+}
+
+.events-masthead-overline {
+  margin: 0 0 17.5px;
+
+  font-size: 8px;
+
+  letter-spacing: 1.96px;
+
+  font-weight: 700;
+
+  color: #77746d;
+}
+
+.events-masthead h1 {
+  max-width: 616px;
+
+  margin: 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: clamp(46.2px, 5.6vw, 89.6px);
+
+  line-height: 0.83;
+
+  letter-spacing: -3.5px;
+
+  font-weight: 400;
+}
+
+.events-masthead h1 em {
+  font-style: italic;
+}
+
+.events-masthead-note {
+  align-self: end;
+
+  padding-left: 16.8px;
+
+  border-left: 1px solid rgba(17, 17, 17, 0.25);
+}
+
+.events-masthead-number {
+  display: block;
+
+  margin-bottom: 14px;
+
+  font-family: "Playfair Display", Georgia, serif;
+
+  font-size: 35px;
+
+  line-height: 0.8;
+}
+
+.events-masthead-note p {
+  max-width: 147px;
+
+  margin: 0;
+
+  font-size: 8px;
+
+  line-height: 1.75;
+
+  color: #68655e;
+}
+
+
+/* ---------------------------------------------------------
+   Events list
+--------------------------------------------------------- */
+
+.events-list-section {
+  padding-top: 49px;
+}
+
+.events-list-head {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 9.8px 0 11.2px;
+
+  margin-bottom: 29.4px;
+
+  border-top: 1px solid #aaa;
+
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+
+  font-weight: 700;
+}
+
+.events-list-head span:last-child {
+  color: #77746d;
+}
+
+
+/* ---------------------------------------------------------
+   Event grid
+--------------------------------------------------------- */
+
+.events-list-section .events-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 52.5px 16.8px;
+}
+
+
+/*
+   Events-page images are intentionally shorter
+   than the old tall posters.
+*/
+
+.events-list-section .event-card-image {
+  aspect-ratio: 4 / 3;
+
+  height: auto;
+}
+
+
+/*
+   Event-page card content
+*/
+
+.events-list-section .event-card-content {
+  padding-top: 11.9px;
+}
+
+.events-list-section .event-card h3 {
+  font-size: clamp(18.9px, 1.65vw, 26.6px);
+
+  line-height: 0.98;
+
+  margin-top: 0;
+}
+
+.events-list-section .event-card p {
+  font-size: 8.4px;
+
+  line-height: 1.5;
+}
+
+
+/* Date on image — events page */
+
+.events-list-section .event-card-image-date {
+  top: 12.6px;
+  right: 12.6px;
+
+  padding: 9.8px 12.6px;
+
+  font-size: 15.4px;
+}
+
+
+/* =========================================================
+   EVENT DETAIL PAGE
+========================================================= */
+
+.back {
+  padding: 17.5px 3.15vw 0;
+
+  font-size: 8px;
+
+  letter-spacing: 1.05px;
+
+  font-weight: 600;
+}
+
+.back span {
+  margin-right: 7px;
+}
+
+
+/* ---------------------------------------------------------
+   Detail hero
+--------------------------------------------------------- */
+
+.detail-hero {
+  padding: 22.4px 3.15vw 56px;
+
+  display: grid;
+
+  grid-template-columns: 1.04fr 0.96fr;
+
+  gap: 2.8vw;
+
+  align-items: end;
+}
+
+
+/*
+   Scoped specifically to the hero copy.
+*/
+
+.detail-hero .detail-copy {
+  padding: 24.5px 0 0;
+}
+
+.title {
+  max-width: 560px;
+
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(45.5px, 5.6vw, 87.5px);
+
+  font-weight: 400;
+
+  line-height: 0.88;
+
+  letter-spacing: -3.5px;
+}
+
+.intro {
+  max-width: 420px;
+
+  margin: 21px 0 0;
+
+  font-size: 9.8px;
+
+  line-height: 1.8;
+
+  color: #4f4d47;
+}
+
+
+/* ---------------------------------------------------------
+   Detail media
+--------------------------------------------------------- */
+
+.detail-media {
+  height: min(66vh, 483px);
+
+  min-height: 336px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+.detail-media img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.media-label {
+  position: absolute;
+
+  left: 12.6px;
+  top: 12.6px;
+
+  background: var(--paper);
+
+  padding: 6.3px 8.4px;
+
+  font-size: 8px;
+
+  letter-spacing: 1.05px;
+
+  font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   Hero metadata
+--------------------------------------------------------- */
+
+.hero-meta {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 0;
+
+  margin-top: 29.4px;
+
+  border-top: 1px solid #aaa;
+}
+
+.meta-item {
+  padding: 11.9px 12.6px 0 0;
+
+  border-right: 1px solid #bbb;
+
+  margin-right: 12.6px;
+}
+
+.meta-item:nth-child(2n) {
+  border-right: 0;
+}
+
+.meta-label {
+  margin-bottom: 4.9px;
+
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+
+  color: #77746d;
+
+  font-weight: 700;
+}
+
+.meta-value {
+  font-family: "Playfair Display", serif;
+
+  font-size: 13.3px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   DETAIL — BOOKING SECTION
+========================================================= */
+
+.details {
+  background: #111;
+
+  color: #fff;
+
+  padding: 52.5px 3.15vw;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.7fr;
+
+  gap: 5.6vw;
+}
+
+.detail-kicker {
+  margin-bottom: 14px;
+
+  font-size: 8px;
+
+  letter-spacing: 2.1px;
+
+  color: #aaa;
+}
+
+.detail-heading {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(31.5px, 3.5vw, 49px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+
+/*
+   Scoped so it doesn't interfere with hero .detail-copy.
+*/
+
+.details .detail-copy {
+  max-width: 490px;
+
+  margin: 0;
+
+  font-size: 9.1px;
+
+  line-height: 1.9;
+
+  color: #d1cec6;
+}
+
+.booking {
+  margin-top: 31.5px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15.4px;
+
+  padding: 18.9px 33.6px;
+
+  background: var(--yellow);
+
+  color: #111;
+
+  font-size: 12.6px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.booking:hover {
+  background: #fff;
+
+  transform: translateX(4px);
+}
+
+.booking span {
+  font-size: 17.5px;
+
+  transition: transform 0.2s ease;
+}
+
+.booking:hover span {
+  transform: translateX(2px);
+}
+
+.booking:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.detail-booking {
+  margin-top: 86px;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video h2 {
+  margin: 0 0 17.5px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(31.5px, 3.5vw, 49px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+}
+
+.video {
+  padding: 0 3.15vw 63px;
+}
+
+.video-head {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: end;
+
+  margin-bottom: 17.5px;
+}
+
+.video-frame {
+  height: min(43.4vw, 455px);
+
+  min-height: 266px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.video-frame video {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   SPONSORS
+========================================================= */
+
+.sponsors {
+  padding: 52.5px 3.15vw;
+
+  border-top: 1px solid var(--line);
+
+  border-bottom: 1px solid var(--line);
+}
+
+.sponsors-head {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: end;
+}
+
+.sponsors h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 38.5px;
+
+  font-weight: 400;
+}
+
+.sponsors-head p {
+  max-width: 182px;
+
+  font-size: 8px;
+
+  line-height: 1.6;
+
+  color: #777;
+}
+
+.sponsor-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 42px 63px;
+
+  margin-top: 38.5px;
+
+  padding-top: 31.5px;
+
+  border-top: 1px solid #aaa;
+}
+
+.sponsor {
+  display: flex;
+
+  align-items: center;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 17.5px;
+
+  font-style: italic;
+
+  letter-spacing: -0.35px;
+
+  color: #57544d;
+
+  filter: grayscale(100%);
+
+  opacity: 0.65;
+
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.sponsor:hover {
+  filter: grayscale(0%);
+
+  opacity: 1;
+}
+
+.sponsor img {
+  width: auto;
+
+  height: 35px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.bottom-cta {
+  padding: 59.5px 3.15vw;
+
+  background: var(--yellow);
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 21px;
+}
+
+.bottom-cta h2 {
+  max-width: 490px;
+
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(33.6px, 4.2vw, 57.4px);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+}
+
+.bottom-cta a {
+  padding: 12.6px 16.8px;
+
+  background: #111;
+
+  color: #fff;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NOT FOUND
+========================================================= */
+
+.not-found {
+  min-height: 60vh;
+
+  padding: 70px 3.15vw;
+}
+
+.not-found h1 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 56px;
+
+  font-weight: 400;
+}
+
+/* =========================================================
+   EVENT DETAIL — EDITORIAL LAYOUT
+========================================================= */
+
+.event-detail-page {
+  width: min(1120px, calc(100% - 8vw));
+  margin: 0 auto;
+  padding: 27px 0 96px;
+}
+
+.event-detail-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 19px;
+  border-bottom: 1px solid var(--line);
+}
+
+.event-back-link,
+.event-category,
+.event-overline,
+.event-booking-row p,
+.event-details-grid dt {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.event-back-link span { margin-right: 7px; }
+.event-category, .event-overline, .event-details-grid dt { color: var(--muted); }
+
+.event-hero-layout {
+  display: grid;
+  align-items: center;
+  min-height: 590px;
+  margin-top: 46px;
+}
+
+.event-hero-layout.has-poster {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(45px, 7vw, 100px);
+}
+
+.event-poster {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.event-poster img {
+  height: auto;
+  object-fit: initial;
+  background: transparent;
+}
+
+.event-introduction {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.event-overline { margin: 0 0 18px; }
+
+.event-introduction h1,
+.event-information h2,
+.event-video-heading h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -2.8px;
+  line-height: .9;
+}
+
+.event-introduction h1 { font-size: clamp(48px, 7vw, 92px); }
+
+.event-description {
+  max-width: 510px;
+  margin: 28px 0 0;
+  color: #5e5b54;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.event-information {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 7vw;
+  margin-top: 78px;
+  padding: 31px 0 36px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.event-information h2, .event-video-heading h2 { font-size: clamp(36px, 4.2vw, 58px); }
+
+.event-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 27px 35px;
+  margin: 0;
+}
+
+.event-details-grid > div { min-width: 0; }
+.event-details-grid dt { margin-bottom: 9px; }
+.event-details-grid dd { margin: 0; font-family: "Playfair Display", Georgia, serif; font-size: 20px; line-height: 1.2; }
+.event-details-grid small { display: block; margin-top: 7px; font-family: "DM Sans", Arial, sans-serif; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.map-link { display: inline-block; margin-top: 12px; padding-bottom: 3px; border-bottom: 1px solid var(--ink); font-family: "DM Sans", Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+
+.event-booking-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  margin-top: 36px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.event-booking-row p { margin: 0; color: var(--muted); }
+.event-booking-button { display: inline-flex; align-items: center; gap: 21px; padding: 16px 21px; background: var(--cream); color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: 1.3px; transition: transform .2s ease; }
+.event-booking-button:hover { background: var(--cream); color: var(--ink); transform: translateX(4px); }
+.event-booking-button span { font-size: 18px; line-height: .7; }
+
+.event-video-section { margin-top: 108px; }
+.event-video-heading { margin-bottom: 27px; }
+.event-video-frame { aspect-ratio: 16 / 9; background: var(--ink); overflow: hidden; }
+.event-video-frame video { width: 100%; height: 100%; object-fit: cover; }
+.event-video-placeholder { position: relative; }
+.event-video-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.event-video-play { position: absolute; top: 50%; left: 50%; display: grid; width: 72px; height: 72px; place-items: center; border: 1px solid rgba(244, 241, 232, .8); border-radius: 50%; color: var(--cream); font-size: 18px; transform: translate(-50%, -50%); }
+.event-booking-row--video { margin-top: 0; border-bottom: 0; }
+
+.event-booking-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 52px;
+  padding: 42px 46px;
+  background: var(--ink);
+}
+
+.event-booking-copy .event-overline {
+  margin-bottom: 14px;
+  color: rgba(244, 241, 232, .62);
+}
+
+.event-booking-copy h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(36px, 4.6vw, 62px);
+  font-weight: 400;
+  letter-spacing: -2.5px;
+  line-height: .92;
+  color: var(--cream);
+}
+
+.event-booking-copy > p:last-child {
+  margin: 16px 0 0;
+  color: rgba(244, 241, 232, .7);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.event-booking-panel .event-booking-button {
+  flex-shrink: 0;
+  padding: 19px 24px;
+}
+
+@media (max-width: 700px) {
+  .event-detail-page { width: calc(100% - 32px); padding-top: 20px; padding-bottom: 64px; }
+  .event-detail-topbar { padding-bottom: 16px; }
+  .event-back-link, .event-category, .event-overline, .event-booking-row p, .event-details-grid dt { font-size: 9px; letter-spacing: 1.3px; }
+  .event-hero-layout { display: block; min-height: 0; margin-top: 28px; }
+  .event-poster { aspect-ratio: auto; }
+  .event-introduction { margin-top: 46px; }
+  .event-introduction h1 { font-size: clamp(43px, 14vw, 68px); letter-spacing: -1.8px; }
+  .event-description { margin-top: 20px; font-size: 14px; line-height: 1.6; }
+  .event-information { display: block; margin-top: 58px; padding: 25px 0 29px; }
+  .event-information-heading { margin-bottom: 30px; }
+  .event-information h2, .event-video-heading h2 { font-size: 40px; letter-spacing: -1.5px; }
+  .event-details-grid { gap: 25px 15px; }
+  .event-details-grid dd { font-size: 16px; }
+  .event-details-grid small { font-size: 11px; }
+  .event-booking-row { align-items: flex-start; flex-direction: column; gap: 16px; margin-top: 24px; padding: 20px 0; }
+  .event-booking-button { width: 100%; justify-content: space-between; }
+  .event-booking-panel { align-items: flex-start; flex-direction: column; gap: 26px; margin-top: 36px; padding: 30px 24px; }
+  .event-booking-copy h2 { font-size: 42px; }
+  .event-booking-copy > p:last-child { font-size: 13px; }
+  .event-booking-panel .event-booking-button { width: 100%; }
+  .event-video-section { margin-top: 68px; }
+  .event-video-frame { aspect-ratio: 16 / 10; }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  /* Navigation */
+
+  .nav {
+    padding: 0 16.8px;
+  }
+
+  .navlinks {
+    gap: 15.4px;
+  }
+
+
+  /* Hero */
+
+  .hero-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-categories {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border-left: 0;
+
+    border-top: 1px solid rgba(17, 17, 17, 0.35);
+
+    padding: 12.6px 0 0;
+  }
+
+
+  /* Home */
+
+  .home-event-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .event-card.featured .event-card-image {
+    aspect-ratio: 4 / 3;
+  }
+
+
+  /* Events */
+
+  .events-masthead {
+    min-height: 350px;
+
+    grid-template-columns: 0.55fr 1.45fr;
+  }
+
+  .events-masthead-note {
+    display: none;
+  }
+
+  .events-list-section .events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  /* Event detail */
+
+  .detail-hero {
+    grid-template-columns: 1fr;
+
+    padding: 17.5px 16.8px 45.5px;
+  }
+
+  .detail-media {
+    order: -1;
+
+    height: 40.6vw;
+
+    min-height: 273px;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+
+    padding: 45.5px 16.8px;
+
+    gap: 28px;
+  }
+
+  .video {
+    padding: 0 16.8px 49px;
+  }
+
+  .sponsors {
+    padding: 42px 16.8px;
+  }
+
+  .sponsor-row {
+    gap: 28px 42px;
+  }
+
+  .bottom-cta {
+    padding: 45.5px 16.8px;
+  }
+
+  .footer {
+    padding: 14px 16.8px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+  /* Navigation */
+
+  .nav {
+    height: 47.6px;
+
+    padding: 0 12.6px;
+  }
+
+  .logo {
+    font-size: 15.4px;
+  }
+
+  .navlinks {
+    gap: 14px;
+
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .navlinks a {
+    font-size: 8px;
+  }
+
+
+  /* Hero */
+
+  .hero-content {
+    min-height: clamp(560px, 78vh, 720px);
+
+    padding: 15.4px 12.6px 21px;
+  }
+
+  .cinematic-hero {
+    min-height: clamp(560px, 78vh, 720px);
+
+    background-position: 60% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(244, 241, 232, 0.92) 0%,
+        rgba(244, 241, 232, 0.88) 50%,
+        rgba(17, 17, 17, 0.25) 100%
+      );
+  }
+
+  .hero-top {
+    font-size: 8px;
+
+    letter-spacing: 0.84px;
+  }
+
+  .hero-top span:last-child {
+    display: none;
+  }
+
+  .handwritten {
+    font-size: 16.1px;
+  }
+
+  .hero-content h1 {
+    font-size: 11.2vw;
+
+    letter-spacing: -2.1px;
+
+    line-height: 1;
+  }
+
+  .hero-intro {
+    font-size: 13px;
+
+    margin-top: 15.4px;
+
+    line-height: 1.5;
+  }
+
+  .hero-categories {
+    font-size: 8px;
+
+    gap: 7.7px;
+  }
+
+
+  /* Home events */
+
+  .home-events {
+    padding: 49px 12.6px;
+  }
+
+  .section-head {
+    display: block;
+
+    margin-bottom: 28px;
+  }
+
+  .text-link {
+    display: inline-block;
+
+    margin-top: 19.6px;
+  }
+
+  .home-event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card.featured .event-card-image,
+  .event-card-image {
+    aspect-ratio: 4 / 3;
+  }
+
+
+  /* Event cards */
+
+  .event-card-image-date {
+    top: 9.8px;
+    right: 9.8px;
+
+    padding: 7.7px 9.1px;
+
+    font-size: 12.6px;
+  }
+
+  .event-card-content {
+    padding: 9.8px 0 17.5px;
+  }
+
+  .event-card h3 {
+    font-size: 21.7px;
+  }
+
+  .event-card p,
+  .event-card-location {
+    font-size: 13px;
+  }
+
+  .event-card-arrow {
+    font-size: 11.2px;
+  }
+
+
+  /* Yellow CTA */
+
+  .yellow-cta {
+    display: block;
+
+    padding: 45.5px 12.6px;
+  }
+
+  .yellow-cta h2 {
+    font-size: 37.8px;
+
+    margin-bottom: 21px;
+  }
+
+
+  /* Events page */
+
+  .events-page {
+    padding: 0 12.6px 52.5px;
+  }
+
+  .events-masthead {
+    min-height: 318.5px;
+
+    padding: 29.4px 0 33.6px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    justify-content: space-between;
+
+    gap: 28px;
+  }
+
+  .events-masthead-label {
+    font-size: 8px;
+
+    letter-spacing: 1.26px;
+  }
+
+  .events-masthead-main {
+    padding-bottom: 0;
+  }
+
+  .events-masthead-overline {
+    margin-bottom: 14px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .events-masthead h1 {
+    font-size: 11.9vw;
+
+    line-height: 0.86;
+
+    letter-spacing: -2.1px;
+  }
+
+  .events-masthead::after {
+    content: "Latest events first — upcoming and past.";
+
+    max-width: 154px;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+
+    color: #68655e;
+  }
+
+  .events-list-section {
+    padding-top: 33.6px;
+  }
+
+  .events-list-head {
+    margin-bottom: 16.8px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.05px;
+  }
+
+  .events-list-section .events-grid {
+    grid-template-columns: 1fr;
+
+    gap: 31.5px;
+  }
+
+  .events-list-section .event-card-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .events-list-section .event-card h3 {
+    font-size: 21.7px;
+  }
+
+  .events-list-section .event-card-image-date {
+    top: 9.8px;
+    right: 9.8px;
+
+    padding: 7.7px 9.1px;
+
+    font-size: 12.6px;
+  }
+
+
+  /* Event detail */
+
+  .back {
+    padding: 14px 12.6px 0;
+  }
+
+  .detail-hero {
+    padding: 10.5px 12.6px 38.5px;
+
+    gap: 24.5px;
+  }
+
+  .detail-media {
+    height: 73.5vw;
+
+    min-height: 0;
+  }
+
+  .detail-hero .detail-copy {
+    padding: 0;
+  }
+
+  .title {
+    font-size: 12.6vw;
+
+    letter-spacing: -2.1px;
+  }
+
+  .intro {
+    font-size: 8.4px;
+
+    margin-top: 15.4px;
+  }
+
+  .hero-meta {
+    margin-top: 21px;
+  }
+
+  .meta-item {
+    padding-top: 9.8px;
+  }
+
+  .meta-value {
+    font-size: 11.2px;
+  }
+
+
+  /* Detail booking */
+
+  .details {
+    padding: 38.5px 12.6px;
+  }
+
+  .details .detail-copy {
+    font-size: 8.4px;
+  }
+
+
+  .video h2 {
+    font-size: 36.4px;
+  }
+
+
+  /* Video */
+
+  .video {
+    padding: 0 12.6px 42px;
+  }
+
+  .video-frame {
+    height: 50.4vw;
+
+    min-height: 182px;
+  }
+
+
+  /* Sponsors */
+
+  .sponsors {
+    padding: 38.5px 12.6px;
+  }
+
+  .sponsors-head {
+    display: block;
+  }
+
+  .sponsors h2 {
+    font-size: 36.4px;
+  }
+
+  .sponsor-row {
+    margin-top: 24.5px;
+
+    padding-top: 21px;
+
+    gap: 21px 35px;
+  }
+
+  .sponsor {
+    font-size: 14px;
+  }
+
+
+  /* Bottom CTA */
+
+  .bottom-cta {
+    display: block;
+
+    padding: 38.5px 12.6px;
+  }
+
+  .bottom-cta h2 {
+    font-size: 36.4px;
+
+    margin-bottom: 21px;
+  }
+
+
+  /* Footer */
+
+  .footer {
+    padding: 14px 12.6px;
+
+    display: block;
+
+    line-height: 2;
+  }
+}
+
+/* =========================================================
+   HEADER + CONTACT SECTION — FINAL
+========================================================= */
+
+.nav {
+  height: 78px;
+  padding: 0 4vw;
+  background: rgba(244, 241, 232, 0.96);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.logo-main {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+}
+
+.logo-sub {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.logo-image {
+  width: 200px;
+  height: 58px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.navlinks {
+  gap: 42px;
+  margin: 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.navlinks a,
+.navlinks a[href="/events"],
+.navlinks a[href="/contact"],
+.navlinks a[href="/contact-us"] {
+  display: inline-flex !important;
+  align-items: center;
+  min-height: 34px;
+}
+
+.navlinks a.active {
+  padding-bottom: 5px;
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  margin: 6px auto;
+  background: var(--ink);
+  transition: transform 0.2s ease;
+}
+
+.menu-open .menu-toggle span:first-child {
+  transform: translateY(3.75px) rotate(45deg);
+}
+
+.menu-open .menu-toggle span:last-child {
+  transform: translateY(-3.75px) rotate(-45deg);
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 5vw;
+  padding: 68px 4vw 74px;
+  border-top: 1px solid var(--line);
+  background: var(--cream);
+  scroll-margin-top: 78px;
+}
+
+.contact-label {
+  padding-top: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: var(--muted);
+}
+
+.contact-content {
+  max-width: 620px;
+}
+
+.contact-content h2 {
+  max-width: 620px;
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(40px, 4.6vw, 68px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -2px;
+}
+
+.contact-content h2 em {
+  font-style: italic;
+}
+
+.contact-content p {
+  max-width: 360px;
+  margin: 18px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.contact-number {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(22px, 2.3vw, 32px);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.contact-section {
+  display: block;
+  text-align: center;
+}
+
+.contact-content {
+  margin: 0 auto;
+}
+
+.contact-content p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Preserve the complete portrait event poster in cards as well. */
+.event-card-image,
+.events-list-section .event-card-image {
+  aspect-ratio: 4 / 5;
+}
+
+.event-card-image img {
+  object-fit: contain;
+  background: var(--paper);
+}
+
+.events-list-section .event-card-image img {
+  object-fit: contain;
+  background: var(--paper);
+}
+
+.contact-number span {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 15px;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    height: 68px;
+    padding: 0 16px;
+  }
+
+  .logo-main {
+    font-size: 24px;
+  }
+
+  .logo-sub {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .logo-image {
+    width: 170px;
+    height: 50px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navlinks {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 16px 14px;
+    margin: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--cream);
+    box-shadow: 0 12px 24px rgba(17, 17, 17, 0.08);
+  }
+
+  .menu-open .navlinks {
+    display: flex;
+  }
+
+  .navlinks a,
+  .navlinks a[href="/events"],
+  .navlinks a[href="/contact"],
+  .navlinks a[href="/contact-us"] {
+    display: flex !important;
+    min-height: 48px;
+    padding: 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+
+  .navlinks a:last-child {
+    border-bottom: 0;
+  }
+
+  .navlinks a.active {
+    padding-bottom: 0;
+  }
+
+  .contact-section {
+    display: block;
+    padding: 50px 16px 56px;
+    scroll-margin-top: 68px;
+  }
+
+  .contact-label {
+    margin-bottom: 22px;
+    font-size: 10px;
+  }
+
+  .contact-content h2 {
+    font-size: clamp(38px, 12vw, 54px);
+    letter-spacing: -1.5px;
+  }
+
+  .contact-content p {
+    margin-top: 22px;
+    font-size: 15px;
+  }
+
+  .contact-number {
+    margin-top: 20px;
+    font-size: clamp(22px, 7vw, 30px);
+  }
+}
+
+
+/* =========================================================
+   NOVA — EVENTS PAGE FIX
+   Final overrides; Home + Event Detail remain unchanged.
+   ========================================================= */
+
+.events-page {
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 2.2vw 53.9px;
+}
+
+.events-masthead {
+  width: 100%;
+  min-height: 210.7px;
+  padding: 35.28px 0;
+  display: block;
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.events-masthead::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0.49px;
+  background: var(--line);
+}
+
+.events-masthead-label {
+  display: none;
+}
+
+.events-masthead-main {
+  min-width: 0;
+  padding: 0;
+}
+
+.events-masthead-overline {
+  margin: 0 0 10.78px;
+  font-size: 8px;
+  letter-spacing: 1.37px;
+  font-weight: 700;
+  color: #77746d;
+}
+
+.events-masthead h1 {
+  max-width: none;
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(37.24px, 4.41vw, 69.58px);
+  line-height: .82;
+  letter-spacing: -2.94px;
+  font-weight: 400;
+}
+
+.events-masthead h1 em {
+  font-style: italic;
+}
+
+.events-list-section {
+  padding-top: 34.3px;
+}
+
+.events-list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6.86px 0 7.84px;
+  margin-bottom: 20.58px;
+  border-top: 1px solid #aaa;
+  font-size: 8px;
+  letter-spacing: 0.98px;
+  font-weight: 700;
+}
+
+.events-list-head span:last-child {
+  color: #77746d;
+}
+
+.events-list-section .events-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 48px 32px;
+  align-items: stretch;
+}
+
+.events-list-section .event-card {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.events-list-section .event-card-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  position: relative;
+  background: #ddd;
+}
+
+.events-list-section .event-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.events-list-section .event-card-image-date {
+  position: absolute;
+  top: 7.84px;
+  right: 7.84px;
+  z-index: 5;
+  padding: 6.37px 8.33px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 10.78px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.025em;
+  white-space: nowrap;
+}
+
+.events-list-section .event-card-content {
+  position: relative;
+  padding: 7.84px 0 11.76px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.events-list-section .event-card-date {
+  display: none;
+}
+
+.events-list-section .event-card h3 {
+  margin: 0 22.54px 4.41px 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(13.72px, 1.2vw, 19.11px);
+  font-weight: 600;
+  line-height: .98;
+  letter-spacing: -.035em;
+  min-height: 2.05em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.events-list-section .event-card p {
+  margin: 0;
+  font-size: 8px;
+  line-height: 1.5;
+  color: #6b6861;
+}
+
+.events-list-section .event-arrow {
+  position: absolute;
+  top: 7.35px;
+  right: 0;
+  font-size: 11.27px;
+  line-height: 1;
+  transition: transform .25s ease;
+}
+
+.events-list-section .event-card:hover .event-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* Events page navigation:
+   If the React navbar contains Home, Events, Experiences, About, Contact,
+   this leaves only Events + Contact visible. */
+@media (min-width: 901px) {
+  .navlinks a:nth-child(1),
+  .navlinks a:nth-child(3),
+  .navlinks a:nth-child(4) {
+    display: none;
+  }
+
+  .navlinks a:nth-child(2),
+  .navlinks a:nth-child(5) {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 900px) {
+  .events-page {
+    padding-left: 11.76px;
+    padding-right: 11.76px;
+  }
+
+  .events-masthead {
+    min-height: 191.1px;
+    padding: 28.42px 0;
+  }
+
+  .events-masthead h1 {
+    font-size: clamp(34.3px, 5.39vw, 51.45px);
+    letter-spacing: -1.96px;
+  }
+
+  .events-list-section {
+    padding-top: 26.95px;
+  }
+
+  .events-list-section .events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 24px;
+  }
+
+  .events-list-section .event-card h3 {
+    font-size: clamp(13.23px, 1.76vw, 17.15px);
+  }
+}
+
+@media (max-width: 560px) {
+  .events-page {
+    padding: 0 8.82px 34.3px;
+  }
+
+  .events-masthead {
+    min-height: 0;
+    padding: 22.05px 0 20.58px;
+    display: block;
+  }
+
+  .events-masthead-overline {
+    margin-bottom: 8.82px;
+    font-size: 8px;
+    letter-spacing: 0.98px;
+  }
+
+  .events-masthead h1 {
+    font-size: 8.82vw;
+    line-height: .84;
+    letter-spacing: -1.47px;
+  }
+
+  .events-list-section {
+    padding-top: 22.05px;
+  }
+
+  .events-list-head {
+    margin-bottom: 12.25px;
+    font-size: 8px;
+    letter-spacing: 0.73px;
+  }
+
+  .events-list-section .events-grid {
+    grid-template-columns: 1fr;
+    gap: 20.58px;
+  }
+
+  .events-list-section .event-card-image {
+    aspect-ratio: 3 / 2;
+  }
+
+  .events-list-section .event-card-image-date {
+    top: 6.37px;
+    right: 6.37px;
+    padding: 5.39px 6.37px;
+    font-size: 8.82px;
+  }
+
+  .events-list-section .event-card-content {
+    padding-top: 6.86px;
+  }
+
+  .events-list-section .event-card h3 {
+    margin-right: 19.6px;
+    font-size: 15.19px;
+  }
+
+  .events-list-section .event-arrow {
+    top: 6.37px;
+    font-size: 10.29px;
+  }
+}
+
+/* =========================================================
+   FINAL EVENTS PAGE CLEANUP
+   ========================================================= */
+
+/* Remove the secondary Events list header and its lines */
+.events-list-head {
+  display: none !important;
+}
+
+.events-list-section {
+  padding-top: 0 !important;
+  border-top: 0 !important;
+}
+
+/* Remove event-card arrows completely */
+.event-arrow,
+.event-card .event-arrow,
+.events-list-section .event-arrow,
+.events-list-section .event-card-arrow {
+  display: none !important;
+}
+
+/* Make the event title use the full card width now that arrows are gone */
+.events-list-section .event-card h3 {
+  margin-right: 0 !important;
+}
+
+/* Keep the Events page masthead clean */
+.events-masthead {
+  border-bottom: 0 !important;
+}
+
+.events-masthead::before {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------
+   HEADER
+   Only EVENTS and CONTACT US should be visible.
+   These rules handle the common navbar structure without
+   changing the Home/Event Detail styling.
+--------------------------------------------------------- */
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 26.6px;
+}
+
+.navlinks a {
+  display: none;
+}
+
+/* The current React navbar should use these labels/classes.
+   If no classes are present, the last two links are treated
+   as Events + Contact Us. */
+.navlinks a[href="/events"],
+.navlinks a[href="/contact"],
+.navlinks a[href="/contact-us"] {
+  display: inline-block;
+}
+
+/* If the navbar currently contains exactly two links,
+   show both of them. */
+.navlinks a:only-child,
+.navlinks a:nth-last-child(2):first-child,
+.navlinks a:nth-last-child(1):nth-child(2) {
+  display: inline-block;
+}
+
+@media (max-width: 560px) {
+  .navlinks {
+    gap: 15.4px;
+  }
+
+  .events-list-section {
+    padding-top: 0 !important;
+  }
+
+  .events-list-section .event-card h3 {
+    margin-right: 0 !important;
+  }
+}
+
+/* Header visibility overrides the legacy navigation rules above. */
+.navlinks a,
+.navlinks a[href="/events"],
+.navlinks a[href="#contact"] {
+  display: inline-flex !important;
+}
+
+@media (max-width: 700px) {
+  .navlinks {
+    top: 68px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 16px 14px;
+    margin: 0;
+  }
+
+  .menu-open .navlinks {
+    display: flex;
+  }
+
+  .navlinks a,
+  .navlinks a[href="/events"],
+  .navlinks a[href="#contact"] {
+    display: flex !important;
+  }
+}
+
+/* Keep the two desktop navigation items anchored consistently across pages. */
+@media (min-width: 701px) {
+  .navlinks {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .navlinks a.active {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .navlinks a.active::after {
+    display: none;
+  }
+}
+
+.navlinks a.active {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.navlinks a.active::after {
+  display: none;
+}
+
+/* Event posters should remain fully visible instead of being cropped. */
+.detail-media {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  background: var(--paper);
+}
+
+.detail-media img {
+  object-fit: contain;
+}
+
+.detail-hero {
+  align-items: center;
+}
+
+.detail-hero .detail-copy {
+  padding-top: 0;
+}
+
+.detail-hero .intro {
+  max-width: 560px;
+  margin-top: 26px;
+  font-size: clamp(16px, 1.1vw, 19px);
+  line-height: 1.65;
+}
+
+.detail-hero .hero-meta {
+  margin-top: 38px;
+}
+
+.detail-hero .meta-label {
+  font-size: 11px;
+  letter-spacing: 1.7px;
+}
+
+.detail-hero .meta-value {
+  font-size: clamp(17px, 1.35vw, 22px);
+  line-height: 1.3;
+}
+
+.details .detail-copy {
+  max-width: 600px;
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.6;
+}
+
+.video {
+  padding-top: 72px;
+}
+
+.video-frame {
+  width: min(100%, 1080px);
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+}
+
+.video-frame video {
+  object-fit: contain;
+  background: #111;
+}
+
+.video-head {
+  width: min(100%, 1080px);
+  margin: 0 auto 24px;
+}
+
+.video-head h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -1.8px;
+}
+
+.video-head h2 em {
+  font-style: italic;
+}
+
+.video-head p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .detail-hero {
+    align-items: stretch;
+  }
+
+  .detail-hero .intro {
+    margin-top: 18px;
+    font-size: 15px;
+  }
+
+  .detail-hero .hero-meta {
+    margin-top: 26px;
+  }
+
+  .detail-hero .meta-label {
+    font-size: 9px;
+  }
+
+  .detail-hero .meta-value {
+    font-size: 15px;
+  }
+
+  .details .detail-copy {
+    font-size: 16px;
+  }
+
+  .detail-booking {
+    margin-top: 32px;
+  }
+
+  .video {
+    padding-top: 48px;
+  }
+
+  .video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-head {
+    margin-bottom: 18px;
+  }
+
+  .video-head p {
+    margin-top: 14px;
+    font-size: 13px;
+  }
+}
+
+/* Final event-list override: preserve the complete portrait poster. */
+.events-list-section .event-card-image {
+  aspect-ratio: 4 / 5 !important;
+}
+
+.events-list-section .event-card-image img {
+  object-fit: contain !important;
+  background: var(--paper);
+}

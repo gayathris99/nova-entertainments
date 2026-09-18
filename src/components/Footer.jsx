@@ -1,0 +1,1 @@
+export default function Footer(){return <footer className="footer"><img className="footer-logo" src="/assets/branding/novologo.png" alt="Nova Entertainments"/><span>EVENTS · EXPERIENCES · MOMENTS</span></footer>}

@@ -1,0 +1,25 @@
+[
+  {
+    "slug": "nova-x-live-charlotte",
+    "name": "Nova x Infusion Live in Charlotte, NC",
+    "category": "Live Music",
+    "description": "A live music experience from Nova Entertainments and Infusion in Charlotte, North Carolina.",
+    "date": "2026-10-10",
+    "time": "To be announced",
+    "venue": {
+      "name": "Concord Event Center",
+      "city": "Charlotte, North Carolina",
+      "address": "To be announced",
+      "mapsUrl": null
+    },
+    "media": {
+      "poster": "/assets/event/nova-x-live-charlotte.png",
+      "video": "/assets/event/nova-x-live-charlotte.mp4"
+    },
+    "sponsors": [
+      { "name": "Pakkaa Local" },
+      { "name": "Code Acuity" }
+    ],
+    "bookingUrl": null
+  }
+]
