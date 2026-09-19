@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import EventCard from "../components/EventCard";
 import { getAllEvents } from "../data/events";
 import ContactSection from "../components/ContactSection";
@@ -45,7 +44,6 @@ export default function Events() {
         <ContactSection />
       </main>
 
-      <Footer />
     </>
   );
 }

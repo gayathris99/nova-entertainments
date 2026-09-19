@@ -1,6 +1,5 @@
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import ContactSection from "../components/ContactSection";
 import { getEventBySlug } from "../data/events";
 
@@ -27,7 +26,6 @@ export default function EventDetails() {
           <Link to="/events">← BACK TO ALL EVENTS</Link>
           <ContactSection />
         </main>
-        <Footer />
       </>
     );
   }
@@ -110,7 +108,6 @@ export default function EventDetails() {
 
         <ContactSection />
       </main>
-      <Footer />
     </>
   );
 }
