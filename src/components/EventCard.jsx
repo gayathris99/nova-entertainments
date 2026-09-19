@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function EventCard({ event }) {
   const formattedDate = event.date
-    ? new Date(event.date).toLocaleDateString("en-US", {
+    ? new Date(`${event.date}T12:00:00`).toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",
         year: "numeric",

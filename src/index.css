@@ -938,14 +938,14 @@ img {
 .media-label {
   position: absolute;
 
-  left: 12.6px;
+  right: 12.6px;
   top: 12.6px;
 
   background: var(--paper);
 
-  padding: 6.3px 8.4px;
+  padding: 8px 10.5px;
 
-  font-size: 8px;
+  font-size: 18px;
 
   letter-spacing: 1.05px;
 
