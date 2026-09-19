@@ -3,13 +3,13 @@
     "slug": "nova-x-live-charlotte",
     "name": "Nova x Infusion Live in Charlotte, NC",
     "category": "Live Music",
-    "description": "A live music experience from Nova Entertainments and Infusion in Charlotte, North Carolina.",
+    "description": "Get ready for an unforgettable night of live vibes and killer tunes with BAND INFUSION and NOVA ENTERTAINMENTS!\n\n**🎶 NOVA × INFUSION — LIVE IN CHARLOTTE, NC! 🎶**\n\nGet ready for an unforgettable night of **live music, entertainment, and incredible energy! 🔥**\n\n**NOVA Entertainments × BAND INFUSION** is bringing an exciting live experience to **Charlotte, NC on October 10th at Concord Event Center.**\n\n✨ Live Entertainment\n🎤 Amazing Performances\n🎶 Music & Entertainment\n🍽️ Food & Drinks\n🎉 Great vibes with friends and family\n\nWhether you're looking for a fun night out, great entertainment, or an experience to remember, NOVA × INFUSION is the place to be!\n\n**🎟️ Get your tickets early, don't miss the night!**\n\n**📅 October 10th**\n**📍 Concord Event Center | Charlotte, NC**\n\n**Come for the music. Stay for the experience. 🔥**",
     "date": "2026-10-10",
-    "time": "To be announced",
+    "time": "8:30 PM – 2:00 AM",
     "venue": {
       "name": "Concord Event Center",
       "city": "Charlotte, North Carolina",
-      "address": "To be announced",
+      "address": "363 Concord Parkway North, Concord, NC 28027",
       "mapsUrl": null
     },
     "media": {
@@ -20,6 +20,6 @@
       { "name": "Pakkaa Local" },
       { "name": "Code Acuity" }
     ],
-    "bookingUrl": null
+    "bookingUrl": "https://www.eventbrite.com/e/band-infusion-x-nova-entertainments-live-in-charlotte-nc-tickets-2001630050363?aff=oddtdtcreator"
   }
 ]

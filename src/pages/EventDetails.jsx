@@ -13,6 +13,17 @@ function formatDate(date, options, dateLabel) {
     : parsedDate.toLocaleDateString("en-US", options);
 }
 
+function renderDescription(text) {
+  if (!text) return null;
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={i}>{part.slice(2, -2)}</strong>
+    ) : (
+      part
+    )
+  );
+}
+
 export default function EventDetails() {
   const { slug } = useParams();
   const event = getEventBySlug(slug);
@@ -45,31 +56,41 @@ export default function EventDetails() {
         </div>
 
         <section className="detail-hero">
-          <div className="detail-copy">
+          <div className="detail-hero-heading">
             <div className="eyebrow">
               {event.category.toUpperCase()} · NOVA ENTERTAINMENTS
             </div>
             <h1 className="title">{event.name}</h1>
-            <p className="intro">{event.description}</p>
-            <div className="hero-meta">
-              <div className="meta-item"><div className="meta-label">DATE</div><div className="meta-value">{shortDate}</div></div>
-              <div className="meta-item"><div className="meta-label">TIME</div><div className="meta-value">{event.time || TBA}</div></div>
-              <div className="meta-item"><div className="meta-label">VENUE</div><div className="meta-value">{event.venue.name || TBA}</div></div>
-              <div className="meta-item"><div className="meta-label">LOCATION</div><div className="meta-value">{event.venue.city || TBA}</div></div>
-            </div>
-            {event.bookingUrl ? (
-              <a className="booking detail-booking" href={event.bookingUrl} target="_blank" rel="noreferrer">
-                BOOK NOW <span>↗</span>
-              </a>
-            ) : (
-              <button className="booking detail-booking" type="button" disabled>
-                BOOK NOW <span>↗</span>
-              </button>
-            )}
           </div>
-          <div className="detail-media">
-            <img src={event.media.poster} alt={event.name} />
-            <div className="media-label">{shortDate}</div>
+          <div className="detail-hero-row">
+            <div className="detail-copy">
+              <p className="intro">{renderDescription(event.description)}</p>
+              <div className="hero-meta">
+                <div className="meta-item"><div className="meta-label">DATE</div><div className="meta-value">{shortDate}</div></div>
+                <div className="meta-item"><div className="meta-label">TIME</div><div className="meta-value">{event.time || TBA}</div></div>
+                <div className="meta-item">
+                  <div className="meta-label">VENUE</div>
+                  <div className="meta-value">{event.venue.name || TBA}</div>
+                  {event.venue.address && event.venue.address !== TBA && (
+                    <div className="meta-sub">{event.venue.address}</div>
+                  )}
+                </div>
+                <div className="meta-item"><div className="meta-label">LOCATION</div><div className="meta-value">{event.venue.city || TBA}</div></div>
+              </div>
+              {event.bookingUrl ? (
+                <a className="booking detail-booking" href={event.bookingUrl} target="_blank" rel="noreferrer">
+                  BOOK NOW
+                </a>
+              ) : (
+                <button className="booking detail-booking" type="button" disabled>
+                  BOOK NOW
+                </button>
+              )}
+            </div>
+            <div className="detail-media">
+              <img src={event.media.poster} alt={event.name} />
+              <div className="media-label">{shortDate}</div>
+            </div>
           </div>
         </section>
 
@@ -96,11 +117,11 @@ export default function EventDetails() {
             </p>
             {event.bookingUrl ? (
               <a className="booking" href={event.bookingUrl} target="_blank" rel="noreferrer">
-                BOOK THE EVENT <span>↗</span>
+                BOOK THE EVENT
               </a>
             ) : (
               <button className="booking" type="button" disabled>
-                BOOK THE EVENT <span>↗</span>
+                BOOK THE EVENT
               </button>
             )}
           </div>

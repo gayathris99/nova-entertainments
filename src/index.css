@@ -864,7 +864,15 @@ img {
 
 .detail-hero {
   padding: 22.4px 3.15vw 56px;
+}
 
+.detail-hero-heading {
+  text-align: center;
+
+  margin: 0 auto 33.6px;
+}
+
+.detail-hero-row {
   display: grid;
 
   grid-template-columns: 1.04fr 0.96fr;
@@ -884,9 +892,9 @@ img {
 }
 
 .title {
-  max-width: 560px;
+  max-width: 720px;
 
-  margin: 0;
+  margin: 0 auto;
 
   font-family: "Playfair Display", serif;
 
@@ -1001,6 +1009,16 @@ img {
   line-height: 1.2;
 }
 
+.meta-sub {
+  margin-top: 3.5px;
+
+  font-size: 11px;
+
+  line-height: 1.3;
+
+  color: #77746d;
+}
+
 
 /* =========================================================
    DETAIL — BOOKING SECTION
@@ -1084,19 +1102,7 @@ img {
 }
 
 .booking:hover {
-  background: #fff;
-
   transform: translateX(4px);
-}
-
-.booking span {
-  font-size: 17.5px;
-
-  transition: transform 0.2s ease;
-}
-
-.booking:hover span {
-  transform: translateX(2px);
 }
 
 .booking:disabled {
@@ -1579,9 +1585,11 @@ img {
   /* Event detail */
 
   .detail-hero {
-    grid-template-columns: 1fr;
-
     padding: 17.5px 16.8px 45.5px;
+  }
+
+  .detail-hero-row {
+    grid-template-columns: 1fr;
   }
 
   .detail-media {
@@ -1889,7 +1897,9 @@ img {
 
   .detail-hero {
     padding: 10.5px 12.6px 38.5px;
+  }
 
+  .detail-hero-row {
     gap: 24.5px;
   }
 
@@ -2619,7 +2629,7 @@ img {
   object-fit: contain;
 }
 
-.detail-hero {
+.detail-hero-row {
   align-items: center;
 }
 
@@ -2632,6 +2642,7 @@ img {
   margin-top: 26px;
   font-size: clamp(16px, 1.1vw, 19px);
   line-height: 1.65;
+  white-space: pre-line;
 }
 
 .detail-hero .hero-meta {
