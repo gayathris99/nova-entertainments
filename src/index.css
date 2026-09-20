@@ -1007,6 +1007,8 @@ img {
   font-size: 13.3px;
 
   line-height: 1.2;
+
+  white-space: pre-line;
 }
 
 .meta-sub {
